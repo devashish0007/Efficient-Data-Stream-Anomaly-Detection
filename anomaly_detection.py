@@ -20,7 +20,7 @@ class AnomalyDetectorIsolationForest:
         self.anomalies = []
         
         # Initialize the Isolation Forest model with a specified contamination level
-        self.iforest_model = IsolationForest(contamination=0.05)
+        self.iforest_model = IsolationForest(contamination=0.1)
 
     def simulate_data_stream(self):
         """
@@ -80,7 +80,7 @@ class AnomalyDetectorIsolationForest:
             # Check if the anomaly score is below a threshold
             if anomaly_score < 0:
                 # Print a message indicating the index and value of the detected anomaly
-                print(len(self.data_stream), f"Anomaly detected: {data_point}", )
+                print("Data point:", len(self.data_stream), f"Anomaly detected: {data_point}", )
                 # Append the anomaly information (index, value) to the list of anomalies
                 self.anomalies.append((len(self.data_stream), data_point))
 
@@ -121,7 +121,7 @@ class AnomalyDetectorIsolationForest:
 
 if __name__ == "__main__":
     # Create an instance of the AnomalyDetectorIsolationForest class with a window size of 30
-    isolation_forest_detector = AnomalyDetectorIsolationForest(window_size=30)
+    isolation_forest_detector = AnomalyDetectorIsolationForest(window_size=20)
 
     # Simulate a data stream using the detector
     isolation_forest_detector.simulate_data_stream()
