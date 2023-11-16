@@ -99,7 +99,7 @@ A real-time visualization tool is developed to showcase the data stream and high
 To run code, install a python3 and then run the following command,
 First install the dependency. 
 ```bash
-  pip install -r requirements.txt
+  pip install -r requirement.txt
 ```
 Now, run the script in Linux,
 ```bash
