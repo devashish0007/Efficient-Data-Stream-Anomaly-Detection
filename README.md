@@ -12,6 +12,19 @@ In this project, we have chosen to utilize the Isolation Forest algorithm for an
 
 The Isolation Forest algorithm operates on the principle of isolating anomalies by constructing random decision trees. It focuses on identifying anomalies with shorter average path lengths within these trees. Unlike other methods, Isolation Forest doesn't require explicitly defining normal behaviour; instead, it leverages the concept that anomalies are more straightforward to isolate than standard instances in the dataset.
 
+The contamination parameter in the Isolation Forest method for anomaly identification in data streams denotes the anticipated percentage of abnormalities in the incoming data stream. The algorithm's effectiveness must be maintained over time by choosing an acceptable contamination parameter because dynamic data streams exhibit concept drift.
+
+Here's how the contamination parameter is relevant in the context of data streams:
+
+- Adaptability to Concept Drift:
+The characteristics of anomalies may vary as the data stream develops. The contamination parameter modifies the anomalous detection threshold to provide greater flexibility. It could be necessary to use a dynamic setting to record changes in the data stream.
+
+- Real-time Detection Sensitivity:
+Being able to spot anomalies fast is essential in a streaming setting. The contamination parameter affects the algorithm's sensitivity, which strikes a balance between avoiding false positives and quickly identifying anomalies.
+
+- Continuous Learning:
+The Isolation Forest algorithm can continually learn and adapt to the changing properties of the data stream with the correct contamination parameter configuration, guaranteeing that the model continues to be effective in real-time anomaly detection.
+
 ### Advantages of Isolation Forest:
 
 - Efficiency: Isolation Forest is highly efficient due to its ability to create shorter paths for anomalies within trees. This characteristic makes it particularly effective for detecting anomalies in high-dimensional and continuous data streams.
@@ -63,6 +76,15 @@ The function executes anomaly detection using the Isolation Forest algorithm wit
 5) Reporting Anomalies: If an anomaly is detected, the function prints a message indicating the index and value of the detected anomaly and appends this information to a list of anomalies.
 
 The Isolation Forest algorithm swiftly identifies anomalies within a data stream. This tool enables real-time anomaly detection by dynamically assessing incoming data points and flagging anomalies when their scores dip below a set threshold. Its proactive nature enhances system monitoring, which is crucial for early anomaly identification across various domains, bolstering system reliability.
+
+## Optimization
+The Isolation Forest algorithm is designed to speed and efficiently process continuous data streams. It employs optimized strategies such as fine-tuning tree structures and parallel processing to enhance computational speed.
+
+## Visualization
+A real-time visualization tool is developed to showcase the data stream and highlight anomalies. It offers an intuitive interface for monitoring the stream's behaviour and identifying flagged anomalies using matplotlib.
+
+
+
 
 ## Dependencies
 
